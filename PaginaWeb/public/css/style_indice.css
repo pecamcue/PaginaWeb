@@ -1,0 +1,266 @@
+:root {
+    
+    --primary-color: #2CA1B5; /* Azul turquesa principal */
+    --primary-hover: #228a9b; /* Azul turquesa oscuro para hover */
+    --secondary-hover: #0e7a84; /* Azul más oscuro para efectos secundarios */
+    --text-dark: black; /* Texto en color negro */
+    --text-light: white; /* Texto en color blanco */
+    --border-color: #ccc; /* Color de borde gris claro */
+    --background-light: #f8f9fa; /* Fondo claro */
+    --background-dark: #adaeae; /* Fondo oscuro */
+}
+
+/* Estilos generales */
+body {
+    background-color: white !important ; /* Fondo blanco para el cuerpo */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+   
+}
+
+/* Colores personalizados */
+.text-primary { color: var(--primary-color) !important; /* Aplicar color principal al texto */ }
+
+/* Botones */
+.btn-primary, .btn-warning {
+    background-color: var(--primary-color); /* Color de fondo del botón */
+    border-color: var(--primary-color); /* Color del borde */
+    color: var(--text-light); /* Texto en blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el botón */
+    transition: background-color 0.3s, box-shadow 0.3s ease; /* Efecto de transición */
+}
+
+.btn-primary:hover, .btn-warning:hover {
+    background-color: var(--primary-hover); /* Color de fondo en hover */
+    border-color: var(--primary-hover); /* Borde en hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+.btn-outline-light {
+    border-color: var(--primary-color); /* Borde con color principal */
+    color: var(--primary-color); /* Texto con color principal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: background-color 0.3s, box-shadow 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: #e6f7ff; /* Color de fondo al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: white; /* Fondo blanco */
+    border-bottom: 1px solid var(--border-color); /* Línea inferior */
+}
+
+.navbar .navbar-brand img {
+    max-width: 100%; /* Imagen de logo adaptativa */
+    height: auto;
+}
+
+.nav-link {
+    color: var(--text-dark); /* Color oscuro para enlaces */
+    transition: color 0.3s, transform 0.3s ease-in-out; /* Transición de color y escala */
+}
+
+.nav-link:hover {
+    color: var(--primary-color); /* Cambio de color al pasar el cursor */
+    transform: scale(1.05); /* Efecto de crecimiento */
+}
+
+/* Menú desplegable */
+.dropdown-menu .dropdown-item:hover {
+    color: var(--primary-color) !important;
+    background-color: transparent !important;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Mostrar el despegable pasar el ratón */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+/* Carrusel */
+.carousel {
+    background-color: var(--background-dark); /* Fondo oscuro */
+    margin-bottom: 60px; /* Espaciado inferior */
+}
+
+.carousel-inner {
+    background-color: var(--background-dark); /* Fondo para las diapositivas */
+}
+
+.carousel-item img {
+    width: 100%; /* Imagen a ancho completo */
+    height: auto;
+    object-fit: cover; /* Ajustar imagen sin deformarla */
+    max-height: 500px; /* Altura máxima */
+}
+
+/* Sección Newsletter */
+.newsletter-section {
+    background-color: var(--primary-color); /* Fondo azul turquesa */
+    color: var(--text-light); /* Texto en blanco */
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.newsletter-section .btn {
+    background-color: var(--primary-hover); /* Color del botón */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-section .btn:hover {
+    background-color: var(--secondary-hover); /* Cambio de color en hover */
+}
+
+/* Tarjetas */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 2px solid var(--primary-color); /* Borde azul turquesa */
+    padding: 10px;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.card {
+    margin: 10px;
+    width: 18rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Elevación al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-card h3 { color: var(--primary-color); }
+
+/* Sección Opiniones */
+#opiniones {
+    background-color: var(--background-light);
+}
+
+#opiniones .card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#opiniones .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#opiniones .card-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+#opiniones h2 { color: var(--primary-color); }
+
+#opiniones .card-body h6 {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Clase para forzar el tamaño y recorte de las imágenes */
+.img-carrusel-fija {
+    width: 100%;
+    height: 500px;       /* Altura fija para escritorio */
+    object-fit: cover;   /* Recorta la imagen para llenar el hueco sin deformar */
+    object-position: center; /* Centra el recorte */
+}
+
+/* Ajuste para móviles (para que no sea tan alto en pantallas pequeñas) */
+@media (max-width: 768px) {
+    .img-carrusel-fija {
+        height: 250px;   /* Altura más pequeña para móvil */
+    }
+}
+
+/* Transiciones para enlaces */
+.text-decoration-none {
+    transition: color 0.3s ease-in-out;
+}
+
+.text-decoration-none:hover {
+    color: var(--primary-hover) !important;
+}
+/* Clase para forzar imágenes cuadradas en las tarjetas */
+.img-tarjeta-cuadrada {
+    width: 100%;               /* Ocupa todo el ancho de la tarjeta */
+    aspect-ratio: 1 / 1;       /* FUERZA una proporción cuadrada exacta (como 800x800) */
+    object-fit: cover;         /* Recorta la imagen para llenar el cuadrado sin deformarla */
+    object-position: center;   /* Centra la imagen para que el recorte quede bien */
+    border-top-left-radius: calc(0.375rem - 1px);  /* Mantiene el borde redondeado de Bootstrap */
+    border-top-right-radius: calc(0.375rem - 1px); /* Mantiene el borde redondeado de Bootstrap */
+}
+
+/* Ajustes responsive */
+@media (min-width: 1200px) {
+    /* Mantener 4 gafas en línea sin romper */
+    .card-container .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 991px) {
+    /* Responsive vertical para pantallas pequeñas */
+    body {
+        padding-bottom: 60px; /* Espacio para bottom nav */
+    }
+
+    /* Ocultar menú principal en móvil (ya manejado con d-none d-lg-flex) */
+
+    /* Área de usuario: solo bienvenido + mi cuenta */
+    .navbar-collapse .navbar-nav {
+        display: none; /* Ocultar menú principal en móvil */
+    }
+
+    /* Ajustes para reseñas: ya en slick responsive muestra 1 en <576px */
+
+    /* Footer: texto más pequeño */
+    .legal-text ul li a,
+    .copyright-text p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar .navbar-brand img { max-width: 250px; }
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-brand img { max-width: 200px; }
+    .navbar-nav { text-align: center; }
+    .carousel-inner img { max-height: 400px; object-fit: cover; }
+    .card-container {
+        display: flex;
+        overflow-x: auto;
+        flex: 1 1 45%;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    .card { flex: 0 0 auto; width: 200px; }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('path/to/mobile-background.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-container { display: block; margin: 0 auto; }
+    .card { width: 100%; }
+}

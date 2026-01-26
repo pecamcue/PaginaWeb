@@ -1,0 +1,157 @@
+/* VARIABLES DE COLOR */
+:root {
+    --primary-turquoise: #2CA1B5; /* Color turquesa principal */
+    --dark-turquoise: #228A9B; /* Tonalidad más oscura del turquesa */
+}
+
+/* ESTILO GENERAL DEL CUERPO */
+body {
+    background-color: white; /* Fondo blanco para la página */
+    margin: 0; /* Elimina los márgenes predeterminados del navegador */
+    padding: 0; /* Elimina el relleno predeterminado del navegador */
+    font-family: 'Roboto', sans-serif; /* Establece la fuente predeterminada */
+}
+
+/* COLORES PERSONALIZADOS */
+.text-primary {
+    color: var(--primary-turquoise) !important; /* Aplica el color turquesa principal al texto */
+}
+
+/* BOTONES */
+.btn-primary {
+    background-color: var(--primary-turquoise); /* Color de fondo del botón principal */
+    border-color: var(--primary-turquoise); /* Color del borde */
+    color: white; /* Texto blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s, box-shadow 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-turquoise); /* Cambio de color al pasar el mouse */
+    border-color: var(--dark-turquoise); /* Cambio de borde en hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Aumento de sombra en hover */
+}
+
+.btn-outline-light {
+    border-color: var(--primary-turquoise); /* Borde con color turquesa */
+    color: var(--primary-turquoise); /* Texto en color turquesa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.btn-outline-light:hover {
+    background-color: #e6f7ff; /* Color de fondo más claro en hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Aumento de sombra en hover */
+}
+
+.btn-warning {
+    background-color: var(--primary-turquoise); /* Se usa el color turquesa en el botón de advertencia */
+    color: white; /* Texto blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.btn-warning:hover {
+    background-color: #0e7a84; /* Cambio de color en hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Aumento de sombra */
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+    background-color: white; /* Fondo blanco */
+    border-bottom: 1px solid #ccc; /* Línea inferior para separación */
+}
+
+.navbar .navbar-brand img {
+    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.nav-link {
+    color: black; /* Color negro para los enlaces */
+    transition: color 0.3s, transform 0.3s ease-in-out; /* Efecto suave */
+}
+
+.nav-link:hover {
+    color: var(--primary-turquoise); /* Cambio de color en hover */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+/* ESTILO PARA MIGAS DE PAN */
+.breadcrumb {
+    background-color: transparent; /* Fondo transparente */
+    padding: 10px 0; /* Espaciado superior e inferior */
+}
+
+.breadcrumb-item a {
+    color: var(--primary-turquoise); /* Color azul turquesa en los enlaces */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.breadcrumb-item a:hover {
+    color: var(--dark-turquoise); /* Cambio a un azul más oscuro en hover */
+}
+
+.breadcrumb-item.active {
+    color: var(--primary-turquoise); /* Color activo */
+}
+
+/* CARRUSEL */
+.carousel {
+    background-color: #adaeae; /* Fondo gris claro */
+    margin-bottom: 60px; /* Espaciado inferior */
+}
+
+.carousel-inner {
+    background-color: #adaeae; /* Fondo gris claro */
+}
+
+.carousel-item img {
+    width: 100%; /* Imagen ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la proporción */
+    object-fit: cover; /* Ajusta la imagen sin distorsionar */
+    max-height: 500px; /* Altura máxima */
+}
+
+.carousel-item {
+    transition: opacity 0.5s ease; /* Transición suave en la opacidad */
+}
+
+/* FORMULARIOS */
+.form-section {
+    margin-top: 20px; /* Espaciado superior */
+}
+
+.form-select, .form-control {
+    border: 1px solid #ccc; /* Borde gris */
+    transition: border-color 0.3s ease; /* Efecto suave en el borde */
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: var(--primary-turquoise); /* Cambio de color en el borde cuando está activo */
+    box-shadow: 0 0 5px rgba(44, 161, 181, 0.5); /* Efecto de sombra en foco */
+}
+
+/* ENLACES CON TRANSICIONES */
+.text-decoration-none {
+    transition: color 0.3s ease-in-out; /* Transición de color */
+}
+
+.text-decoration-none:hover {
+    color: var(--dark-turquoise) !important; /* Cambio de color en hover */
+}
+
+/* AJUSTES RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .btn {
+        width: 100%; /* Botones de ancho completo en móviles */
+    }
+
+    .carousel-inner img {
+        max-height: 400px; /* Reduce la altura máxima en dispositivos pequeños */
+    }
+}

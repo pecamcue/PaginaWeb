@@ -1,0 +1,128 @@
+/* Estilo general */
+body {
+       background-color: white;
+       margin: 0;
+       padding: 0;
+       font-family: 'Roboto', sans-serif;
+   }
+   
+/* Definir un solo color azul turquesa */
+   :root {
+       --primary-turquoise: #2CA1B5;
+       --dark-turquoise: #228A9B;
+   }
+   
+/* Colores personalizados */
+   .text-primary {
+       color: var(--primary-turquoise) !important;
+   }
+   
+   .btn-primary {
+       background-color: var(--primary-turquoise);
+       border-color: var(--primary-turquoise);
+       color: white;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       transition: background-color 0.3s, box-shadow 0.3s ease;
+   }
+   
+   .btn-primary:hover {
+       background-color: var(--dark-turquoise);
+       border-color: var(--dark-turquoise);
+       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+   }
+   
+   .btn-outline-light {
+       border-color: var(--primary-turquoise);
+       color: var(--primary-turquoise);
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       transition: background-color 0.3s, box-shadow 0.3s ease;
+   }
+   
+   .btn-outline-light:hover {
+       background-color: #e6f7ff;
+       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+   }
+   
+   .btn-warning {
+       background-color: var(--primary-turquoise);
+       color: white;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       transition: background-color 0.3s, box-shadow 0.3s ease;
+   }
+   
+   .btn-warning:hover {
+       background-color: #0e7a84;
+       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+   }
+   
+/* Barra de navegación */
+   .navbar {
+       background-color: white;
+       border-bottom: 1px solid #ccc;
+   }
+   
+   .navbar .navbar-brand img {
+       max-width: 100%;
+       height: auto;
+   }
+   
+   .nav-link {
+       color: black;
+       transition: color 0.3s, transform 0.3s ease-in-out;
+   }
+   
+   .nav-link:hover {
+       color: var(--primary-turquoise);
+       transform: scale(1.05);
+   }
+   
+/* Estilo para las migas de pan */
+   .breadcrumb {
+       background-color: transparent;
+       padding: 10px 0;
+   }
+   
+   .breadcrumb-item a {
+       color: var(--primary-turquoise);
+       transition: color 0.3s ease;
+   }
+   
+   .breadcrumb-item a:hover {
+       color: var(--dark-turquoise);
+       transition: color 0.3s ease;
+   }
+   
+   .breadcrumb-item.active {
+       color: var(--primary-turquoise);
+   }
+   
+/* Estilos para iframes */
+   iframe {
+       width: 100%;
+       height: 100%;
+   }
+   
+   @media (max-width: 768px) {
+       iframe {
+           height: 300px;
+           min-height: 300px;
+       }
+   }
+   
+   form {
+       padding-bottom: 40px;
+   }
+   
+   footer {
+       margin-top: 40px;
+   }
+   
+/* Transiciones para enlaces */
+   .text-decoration-none {
+       transition: color 0.3s ease-in-out;
+   }
+   
+   .text-decoration-none:hover {
+       color: var(--dark-turquoise) !important;
+   }
+   

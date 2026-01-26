@@ -1,0 +1,169 @@
+/* Definir variables de color en :root */
+:root {
+       --primary-color: #2CA1B5; /* Azul turquesa principal */
+       --primary-hover: #228a9b; /* Azul turquesa más oscuro */
+       --background-light: #e6f7ff; /* Fondo claro */
+       --text-dark: black; /* Color de texto oscuro */
+       --text-light: white; /* Color de texto claro */
+   }
+   
+   /* Estilo general del cuerpo de la página */
+   body {
+       background-color: white; /* Fondo blanco */
+       margin: 0; /* Eliminar márgenes */
+       padding: 0; /* Eliminar relleno */
+       font-family: 'Roboto', sans-serif; /* Fuente principal */
+   }
+   
+   /* Colores personalizados para textos */
+   .text-primary {
+       color: var(--primary-color) !important; /* Aplica color primario */
+   }
+   
+   /* Estilos para los botones principales */
+   .btn-primary {
+       background-color: var(--primary-color) !important; /* Fondo azul turquesa */
+       border-color: var(--primary-color) !important; /* Borde del mismo color */
+       color: var(--text-light) !important; /* Texto en blanco */
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+       transition: background-color 0.3s, box-shadow 0.3s ease; /* Transiciones suaves */
+   }
+   
+   .btn-primary:hover {
+       background-color: var(--primary-hover); /* Color más oscuro al pasar el mouse */
+       border-color: var(--primary-hover); /* Borde del mismo color */
+       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más intensa */
+   }
+   
+   /* Botón con borde en lugar de fondo */
+   .btn-outline-light {
+       border-color: var(--primary-color); /* Borde azul turquesa */
+       color: var(--primary-color); /* Texto azul turquesa */
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+       transition: background-color 0.3s, box-shadow 0.3s ease;
+   }
+   
+   .btn-outline-light:hover {
+       background-color: var(--background-light); /* Fondo azul claro al pasar el mouse */
+       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más intensa */
+   }
+   
+   /* Estilos para los botones de advertencia (se usa el color principal) */
+   .btn-warning {
+       background-color: var(--primary-color); /* Fondo azul turquesa */
+       color: var(--text-light); /* Texto en blanco */
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+       transition: background-color 0.3s, box-shadow 0.3s ease;
+   }
+   
+   .btn-warning:hover {
+       background-color: var(--primary-hover); /* Color más oscuro en hover */
+       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más intensa */
+   }
+   
+   /* Barra de navegación */
+   .navbar {
+       background-color: white; /* Fondo blanco */
+       border-bottom: 1px solid #ccc; /* Línea inferior gris */
+   }
+   
+   .navbar .navbar-brand img {
+       max-width: 100%; /* Imagen responsive */
+       height: auto; /* Mantener proporciones */
+   }
+   
+   /* Estilos para los enlaces de navegación */
+   .nav-link {
+       color: var(--text-dark); /* Texto en negro */
+       transition: color 0.3s, transform 0.3s ease-in-out; /* Transiciones suaves */
+   }
+   
+   .nav-link:hover {
+       color: var(--primary-color); /* Color azul turquesa al pasar el mouse */
+       transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+   }
+   
+   /* Estilos para las migas de pan */
+   .breadcrumb {
+       background-color: transparent; /* Fondo transparente */
+       padding: 10px 0; /* Espaciado superior e inferior */
+       margin-left: 120px; /* Margen izquierdo */
+       margin-top: 50px; /* Margen superior */
+   }
+   
+   .breadcrumb-item a {
+       color: var(--primary-color); /* Color azul turquesa para los enlaces */
+       transition: color 0.3s ease; /* Transición suave de color */
+   }
+   
+   .breadcrumb-item a:hover {
+       color: var(--primary-hover); /* Azul más oscuro en hover */
+   }
+   
+   .breadcrumb-item.active {
+       color: var(--primary-color); /* Color azul turquesa para el elemento activo */
+   }
+   
+   /* Tarjetas de categoría */
+   .category-card {
+       flex: 1 1 30%; /* Ocupar un 30% del ancho disponible */
+       display: flex;
+       flex-direction: column;
+       border: 1px solid #ddd; /* Borde gris claro */
+       border-radius: 8px; /* Bordes redondeados */
+       padding: 15px; /* Espaciado interno */
+       text-align: center; /* Centrar contenido */
+       margin: 10px; /* Margen entre tarjetas */
+       transition: transform 0.3s; /* Transición suave */
+       height: 100%; /* Altura completa */
+   }
+   
+   .category-card:hover {
+       transform: scale(1.05); /* Efecto de escala en hover */
+   }
+   
+   .category-card img {
+       object-fit: cover; /* Mantener proporciones sin deformarse */
+       width: 100%; /* Ancho completo */
+       max-height: 200px; /* Altura máxima */
+       border-radius: 5px; /* Bordes redondeados */
+       margin-bottom: 15px; /* Espaciado inferior */
+   }
+   
+   /* Estilos para encabezados */
+   h1, h2, h3 {
+       color: var(--primary-color); /* Color azul turquesa */
+   }
+   
+   /* Ajustes de estructura para las tarjetas */
+   .col-md-4.mb-4.d-flex {
+       display: flex;
+   }
+   
+   .category-card a {
+       display: block;
+       height: 100%;
+   }
+   
+   /* Responsividad */
+   @media (max-width: 768px) {
+       .category-card {
+           flex: 1 1 45%; /* En pantallas medianas ocupan 45% */
+       }
+   }
+   
+   @media (max-width: 576px) {
+       .category-card {
+           flex: 1 1 100%; /* En pantallas pequeñas ocupan 100% */
+       }
+   }
+   
+   /* Transiciones para enlaces */
+   .text-decoration-none {
+       transition: color 0.3s ease-in-out;
+   }
+   
+   .text-decoration-none:hover {
+       color: var(--primary-hover) !important; /* Color más oscuro en hover */
+   }
+   
