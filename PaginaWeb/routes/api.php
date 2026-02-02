@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ResenyaController;
 
+// CSRF cookie para SPA (Sanctum) - redirige a la ruta de Sanctum
+Route::get('/sanctum/csrf-cookie', function () {
+    return app(\Laravel\Sanctum\Http\Controllers\CsrfCookieController::class)->show(request());
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
