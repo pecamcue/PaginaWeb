@@ -12,30 +12,28 @@ class ApiAuthController extends Controller
 {
     public function login(Request $request): JsonResponse
     {
-        // Validar credenciales
-        $credentials = $request->validate([
+        $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            $token = $user->createToken('shared-auth-token')->plainTextToken;
+        $user = User::where('email', $request->email)->first();
 
-
-            $cookie = cookie(
-                'auth_token', $token, 120, '/', null, true, true, false, 'Lax'               
-            );
-
+        if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json([
-                'user' => $user,
-                'token' => $token,
-            ], 200)->withCookie($cookie);
+                'message' => 'Credenciales inválidas',
+            ], 401);
         }
 
+        $token = $user->createToken('shared-auth-token')->plainTextToken;
+        $cookie = cookie(
+            'auth_token', $token, 120, '/', null, true, true, false, 'Lax'
+        );
+
         return response()->json([
-            'message' => 'Credenciales inválidas',
-        ], 401);
+            'user' => $user,
+            'token' => $token,
+        ], 200)->withCookie($cookie);
     }
 
    public function logout(Request $request): JsonResponse

@@ -459,15 +459,16 @@ class StripeController extends Controller
 
             $lineItems = [];
             foreach ($order->orderItems as $item) {
+                $productName = $item->product
+                    ? ($item->product->marca . ' ' . $item->product->modelo)
+                    : 'Producto #' . $item->product_id;
                 $lineItems[] = [
                     'price_data' => [
                         'currency' => 'eur',
-                        'product_data' => [
-                            'name' => $item->product->marca . ' ' . $item->product->modelo,
-                        ],
-                        'unit_amount' => round($item->precio_unitario * 100),
+                        'product_data' => ['name' => $productName],
+                        'unit_amount' => (int) round($item->precio_unitario * 100),
                     ],
-                    'quantity' => $item->cantidad,
+                    'quantity' => (int) $item->cantidad,
                 ];
             }
 
@@ -523,8 +524,9 @@ class StripeController extends Controller
         $signatureString = $merchantCode . $orderReference . $amount . $terminal . 'EUR' . $password;
         $signature = strtoupper(hash('sha512', $signatureString));
 
-        $urlOk = route('stripe.success', ['order_id' => $order->id]);
-        $urlKo = route('stripe.cancel', ['order_id' => $order->id]);
+        $baseUrl = rtrim(env('PAYMENT_RETURN_BASE_URL', config('app.url')), '/');
+        $urlOk = $baseUrl . '/payment/success?order_id=' . $order->id;
+        $urlKo = $baseUrl . '/payment/cancel?order_id=' . $order->id;
 
         $params = [
             'DS_MERCHANT_MERCHANTCODE'       => $merchantCode,
